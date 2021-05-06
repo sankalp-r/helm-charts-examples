@@ -71,13 +71,13 @@ Example for lookup function
 {{- $secret := lookup "v1" "Secret" .Release.Namespace "sample-secret" -}}
 {{- if $secret -}}
 {{/*
-   Reusing existing keys since secret exists
+   Reusing existing secret data
 */}}
 accesskey: {{ $secret.data.accesskey }}
 secretkey: {{ $secret.data.secretkey }}
 {{- else -}}
 {{/*
-    Generate new keys
+    Generate new data
 */}}
 accesskey: {{ randAlphaNum 10 | b64enc }}
 secretkey: {{ randAlphaNum 10 | b64enc }}
