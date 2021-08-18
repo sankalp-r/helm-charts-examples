@@ -1,2 +1,2 @@
 # helm-charts-examples
-Example for
+Example for how to use helm lookup function.
